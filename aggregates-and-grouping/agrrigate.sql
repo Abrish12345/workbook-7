@@ -30,5 +30,31 @@ GROUP BY SupplierID;
 -- in the category? You can answer this query by only looking at the Products
 -- table
 
+SELECT categoryID, AVG(UnitPrice) AS AveragePrice 
+FROM products
+GROUP BY categoryID;
+
+-- For suppliers that provide at least 5 items to Northwind, what is the
+-- supplier ID of each supplier and the number of items they supply? You
+-- can answer this query by only looking at the Products table.
+
+SELECT SupplierID, Count(*) AS NumberOfItems
+From products
+GROUP BY SupplierID
+HAVING COUNT(*) >= 5;
+
+-- List the product id, product name, and inventory value (calculated by
+-- multiplying unit price by the number of units on hand). Sort the results in
+-- descending order by value. If two or more have the same value, order by
+-- product name.
+
+SELECT ProductID,
+ProductName,
+UnitPrice * UnitsInStock AS InventoryValue
+FROM
+products
+ORDER BY
+InventoryValue DESC,
+ProductName ASC;
 
 
