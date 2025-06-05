@@ -13,7 +13,7 @@ SELECT * FROM categories;
 SELECT * FROM products;
 
 INSERT INTO products (ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued)
-VALUES ('Cheese',30,4, '10 pacs',25.00,50,0,5,0);
+VALUES ('Cheese',30, 1, '10 pacs',25.00,50,0,5,0);
 
 --  List all products and their suppliers
 SELECT 
@@ -46,7 +46,7 @@ suppliers S ON s.SupplierID=p.SupplierID;
 -- Delete the new product
 DELETE FROM products 
 WHERE 
-ProductID = 78;
+ProductID = 80;
 
 -- Delete the new supplier.
 DELETE FROM suppliers
